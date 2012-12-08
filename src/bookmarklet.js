@@ -19,6 +19,9 @@ javascript: (function (e, a, g, h, f, c, b, d) {
      }
    }
   }
+
+  var BIG_WIDTH = 150;      // min width of image that counts as big
+
   logDebug("Bookmarklet and jQuery is ready");
   var allImages = $("img");
   var bigImages = allImages.filter(function() {
