@@ -31,7 +31,7 @@ javascript: (function (e, a, g, h, f, c, b, d) {
   logDebug("Number of images", allImages.length, " and big images", bigImages.length);
   logDebug("Big Images are");
 
-  $.each(bigImageSrcs).foreach( function(i,s) {
+  $.each(bigImageSrcs, function(i,s) {
     logDebug(i, s);
   });
 });
