@@ -12,6 +12,23 @@ javascript: (function (e, a, g, h, f, c, b, d) {
         a.documentElement.childNodes[0].appendChild(c)
     }
 })(window, document, "1.8.3", function ($, L) {
-    console.log("We have jQuery");
-    console.log("Number of images", $("img").length);
+  function logDebug() {
+   if(console) {
+     if(console.log) {
+       console.log(arguments);
+     }
+   }
+  }
+  logDebug("Bookmarklet and jQuery is ready");
+  var allImages = $("img");
+  var bigImages = allImages.filter(function() {
+    return $(this).width() >= BIG_WIDTH;
+  });
+  var bigImageSrcs = bigImages.map(function(i, e){return $(e).attr("src");})
+  logDebug("Number of images", allImages.length, " and big images", bigImages.length);
+  logDebug("Big Images are");
+
+  $.each(bigImagesSrcs).foreach( function(i,s) {
+    logDebug(i, s);
+  });
 });
